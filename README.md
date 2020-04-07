@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="320" src="https://www.inhand.com.cn/images/logo.png">
+  <img width="320" src="http://inhandnetworks.com/images/logo.png">
 </p>
 
 English | [简体中文](./README.zh-CN.md) 
