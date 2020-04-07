@@ -29,7 +29,7 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 &emsp;&emsp;*(5.1).按 Win+R 键，输入 cmd 调出命令提示符，输入python，回车，弹出如下信息则说明python运行环境已经准备好*
 
-```
+```cmd
     Python 3.7.4 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53)
     [Clang 6.0 (clang-600.0.57)] on win64
     Type "help", "copyright", "credits" or "license" for more information.
@@ -46,6 +46,10 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 &emsp;&emsp;*(5.3).VS Code环境确认，完成VS code安装，需要在VS Code IDE的“Extensions”中安装插件才能继续使用*
 
+&emsp;&emsp;&emsp;*(5.3.1)make sure “Python: select Interpreter” is Python 3.7.x*
+
+
+
 ## 三、VG710-Python-Templates目录结构
 
 本项目已经为你生成了一个完整的开发框架，下面是整个项目的目录结构。
@@ -61,88 +65,92 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 ```
 
 
-## 开发
+
+## 四、开发
 
 ```bash
-# 克隆项目
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+# 打开命令提示符窗口
 
-# 进入项目目录
-cd vue-element-admin
+  Windows 10 ----> Win+R键
+  MacOS10.14 ----> command+空格，输入terminal.app
+  Linux      ----> Ctrl+Alt+T 打开新终端
+
+# 以MacOS为例，将文件存储在“Documents/”目录中
+
+  cd Documents/
+
+# 克隆项目
+
+  git clone https://github.com/154386670/VG710-Python-Templates.git
+
+```
+
+# 五、修改项目名称
+
+&emsp;将克隆的模板项目修改为自建项目名称，以“HelloWorld”为例，修改“VG710-Python-Templates”项目文件夹名称为“HelloWorld”
+
+&emsp;文件目录如下：
+```
+  HelloWorld
+  ├── .vscode
+  │  └── sftp.json
+  ├── build
+  ├── src
+  │  │── main.py
+  │  └── parse_config.py
+  ├── config.yaml
+  ├── setup.py
+```
+
+# 五、将VG71-Python-Templates项目导入VS Code
+
+&emsp;*（5.1）修改代码中的项目名称：*
+```python
+---------------------------------------------------------------------------
+./Documents/HelloWorld/setup.py，代码片段：
+..
+...
+    rom setuptools import setup, find_packages
+    setup(name='helloworld',          #修改“appname”为“HelloWorld”
+        sdk_version='0.2.0',
+        version='0.0.0',
+        author='Inhand',
+...
+..
+---------------------------------------------------------------------------
+./Documents/HelloWorld/src/main.py，代码片段：
+..
+...
+    app = APPConfig(name="appname")   #修改“appname”为“HelloWorld”
+    app_config_file = app.get_app_cfg_file()
+...
+..
+---------------------------------------------------------------------------
+
+```
+&emsp;*（5.2）配置Sftp连接信息：*
+
+
+```json
+./Documents/HelloWorld/.vscode/sftp.json
+
+{
+    "name": "Debug Server",
+    "host": "192.168.2.1",                    #车载网关以太网地址
+    "protocol": "sftp",
+    "port": 222,
+    "username": "pyuser",
+    "password":"VF7101937000028",             #车载网关序列号
+    "remotePath": "/var/user/app/appname",    #修改“appname”为“HelloWorld”
+    "uploadOnSave": true,
+    "ignore":[
+        ".vscode",
+        ".git",
+        ".DS_Store"
+    ]
+}
+```
 
 # 安装依赖
-npm install
 
-# 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
-
-# 启动服务
-npm run dev
-```
-
-浏览器访问 http://localhost:9527
-
-## 发布
-
-```bash
-# 构建测试环境
-npm run build:stage
-
-# 构建生产环境
-npm run build:prod
-```
-
-## 其它
-
-```bash
-# 预览发布环境效果
-npm run preview
-
-# 预览发布环境效果 + 静态资源分析
-npm run preview -- --report
-
-# 代码格式检查
-npm run lint
-
-# 代码格式检查并自动修复
-npm run lint -- --fix
-```
-
-更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/zh/)
-
-## Changelog
-
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
-
-## Online Demo
-
-[在线 Demo](https://panjiachen.github.io/vue-element-admin)
-
-## Donate
-
-如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :tropical_drink:
-![donate](https://panjiachen.github.io/donate/donation.png)
-
-[更多捐赠方式](https://panjiachen.gitee.io/vue-element-admin-site/zh/donate)
-
-[Paypal Me](https://www.paypal.me/panfree23)
-
-[Buy me a coffee](https://www.buymeacoffee.com/Pan)
-
-## 购买贴纸
-
-你也可以通过 购买[官方授权的贴纸](https://smallsticker.com/product/vue-element-admin) 的方式来支持 vue-element-admin - 每售出一张贴纸，本项目将获得 2 元的捐赠。
-
-## Browsers support
-
-Modern browsers and Internet Explorer 10+.
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-
-Copyright (c) 2017-present PanJiaChen
+Copyright (c) 2020-present Xiaopeng Gou
