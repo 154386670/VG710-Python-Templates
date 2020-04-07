@@ -9,29 +9,10 @@
 
 VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3和IoT实现，它使用了最新的物联网架构技术，内置了丰富的API接口，提炼了丰富的业务模块，提供了丰富的组件功能，它可以帮助你快速搭建定制化业务功能，相信不管你的物联网需求是什么，本项目都能够帮主到你
 
-### 开发流程
-
-```mermaid
-graph LR
-A[方形] -->B(圆角)
-    B --> C{条件a}
-    C -->|a=1| D[结果1]
-    C -->|a=2| E[结果2]
-    F[横向流程图]
-```
+### 开发流程说明
 
 ```sequence
-Title: 标题：复杂使用
-对象A->对象B: 对象B你好吗?（请求）
-Note right of 对象B: 对象B的描述
-Note left of 对象A: 对象A的描述(提示)
-对象B-->对象A: 我很好(响应)
-对象B->小三: 你好吗
-小三-->>对象A: 对象B找我了
-对象A->对象B: 你真的好吗？
-Note over 小三,对象B: 我们是朋友
-participant C
-Note right of C: 没人陪我玩
+title: Title
 ```
 
 
@@ -132,11 +113,11 @@ Note right of C: 没人陪我玩
   ├── setup.py
 ```
 
-# 五、将VG71-Python-Templates项目导入VS Code
+# 五、将VG710-Python-Templates项目导入VS Code
 
 &emsp;*（5.1）修改代码中的项目名称：*
 ```python
----------------------------------------------------------------------------
+
 ./Documents/HelloWorld/setup.py，代码片段：
 ..
 ...
@@ -181,6 +162,6 @@ Note right of C: 没人陪我玩
 }
 ```
 
-# 安装依赖
+
 
 Copyright (c) 2020-present Xiaopeng Gou
