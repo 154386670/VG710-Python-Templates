@@ -11,9 +11,29 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 ### 开发流程
 
-mermaid
+```mermaid
 graph LR
-   A --> B
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+    F[横向流程图]
+```
+
+```sequence
+Title: 标题：复杂使用
+对象A->对象B: 对象B你好吗?（请求）
+Note right of 对象B: 对象B的描述
+Note left of 对象A: 对象A的描述(提示)
+对象B-->对象A: 我很好(响应)
+对象B->小三: 你好吗
+小三-->>对象A: 对象B找我了
+对象A->对象B: 你真的好吗？
+Note over 小三,对象B: 我们是朋友
+participant C
+Note right of C: 没人陪我玩
+```
+
 
 ## 二、环境准备
 
@@ -33,7 +53,7 @@ graph LR
 
 ### `5、验证PC环境是否满足要求：`
 
-&emsp;&emsp;*(5.1).按 Win+R 键，输入 cmd 调出命令提示符，输入python，回车，弹出如下信息则说明python运行环境已经准备好*
+&emsp;&emsp;*(5.1).按 <kbd>Win</kbd>+<kbd>R</kbd> 键，调出命令提示符，输入python，回车，弹出如下信息则说明python运行环境已经准备好*
 
 ```cmd
     Python 3.7.4 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53)
@@ -74,13 +94,17 @@ graph LR
 
 ## 四、开发
 
-```bash
+
 # 打开命令提示符窗口
 
-  Windows 10 ----> Win+R键
-  MacOS10.14 ----> command+空格，输入terminal.app
-  Linux      ----> Ctrl+Alt+T 打开新终端
+  Windows 10 ----> <kbd>Win</kbd>+<kbd>R</kbd>键
 
+  MacOS10.14 ----> <kbd>command</kbd>+<kbd>空格</kbd>，输入terminal.app
+
+  Linux      ----> <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>打开新终端
+
+
+```
 # 以MacOS为例，将文件存储在“Documents/”目录中
 
   cd Documents/
