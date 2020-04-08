@@ -21,7 +21,7 @@ VG710-Python-Templates is an in-vehicle edge computing solution. It is based on 
 
 To use this template to quickly develop your connected car application, you must have the following conditions
 
-### `1、1. InVehicle Gateway710, the vehicle gateway of Yinghantong, referred to as VG710 for short`
+### `1. InVehicle Gateway710, the vehicle gateway of Yinghantong, referred to as VG710 for short`
 
 ### `2. Internet of things sim card capable of accessing the internet`
 
@@ -63,14 +63,14 @@ To use this template to quickly develop your connected car application, you must
 This project has generated a complete development framework for you. The following is the directory structure of the entire project.
 
 ```
-├── .vscode                    # VS Code配置文件夹
-│  └── sftp.json               # SFTP插件的配置文件，用于与InVehicleG710建立SFTP连接
-├── build                      # App发布包文件夹
-├── src                        # App源码文件夹
-│  │── main.py                 # App程序入口
-│  └── parse_config.py         # 解析App配置文件
-├── config.yaml                # App配置文件
-├── setup.py                   # App版本、SDK版本等信息说明
+├── .vscode                    # VS Code configuration folder
+│  └── sftp.json               # Configuration file of SFTP plug-in, used to establish SFTP connection with InVehicleG710
+├── build                      # Build folder
+├── src                        # AppSource folder
+│  │── main.py                 # AppProgram entry
+│  └── parse_config.py         # Parsing configuration files
+├── config.yaml                # configuration files
+├── setup.py                   # Version, SDK version and other information description
 ```
 
 
@@ -84,7 +84,7 @@ This project has generated a complete development framework for you. The followi
 
   MacOS10.14 ----> <kbd>command</kbd>+<kbd>Space</kbd>，Inputterminal.app
 
-  Linux      ----> <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>打开新终端
+  Linux      ----> <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>，Open new terminal
 
 
 ```
