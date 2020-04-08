@@ -11,6 +11,11 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 ### 开发流程说明
 
+<kbd>VS Code IDE</kbd>---(sftp connect)---><kbd>VG710</kbd>---><kbd>Import Templates</kbd>
+
+<kbd>Python Program design</kbd>---><kbd>Online debugging</kbd>
+
+<kbd>Package binaries in VG710</kbd>---><kbd>Download and install binaries on other vg710</kbd>
 
 ## 二、环境准备
 
