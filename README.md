@@ -15,7 +15,7 @@ VG710-Python-Templates is an in-vehicle edge computing solution. It is based on 
 
 <kbd>Python Program design</kbd>---><kbd>Online debugging</kbd>
 
-<kbd>Package binaries in VG710</kbd>---><kbd>Download and install binaries on other vg710</kbd>
+<kbd>Package binaries in VG710</kbd>---><kbd>Download and install binaries on other VG710</kbd>
 
 ## 2、 Environmental preparation
 
@@ -115,7 +115,7 @@ This project has generated a complete development framework for you. The followi
   ├── setup.py
 ```
 
-# 5、 Import vg710 Python templates project into vs Code
+# 5、 Import VG710 Python templates project into vs Code
 
 &emsp;*(5.1) modify the project name in the code:*
 ```python
