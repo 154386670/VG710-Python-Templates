@@ -124,7 +124,7 @@ This project has generated a complete development framework for you. The followi
 ..
 ...
     rom setuptools import setup, find_packages
-    setup(name='helloworld',          #Change "appName" to "HelloWorld"
+    setup(name='appName',          #Change "appName" to "HelloWorld"
         sdk_version='0.2.0',
         version='0.0.0',
         author='Inhand',
