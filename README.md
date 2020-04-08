@@ -9,7 +9,7 @@ English | [简体中文](./README.zh-CN.md)
 
 VG710-Python-Templates is an in-vehicle edge computing solution. It is based on python3 and IoT. It uses the latest IoT architecture technology, has built-in rich API interfaces, refined rich business modules, and provided rich component functions. , It can help you quickly build customized business functions, I believe that no matter what your Internet of Things needs, this project can help the master to you
 
-### Development process description
+&emsp; Development process description
 
 <kbd>VS Code IDE</kbd>---(sftp connect)---><kbd>VG710</kbd>---><kbd>Import Templates</kbd>
 
