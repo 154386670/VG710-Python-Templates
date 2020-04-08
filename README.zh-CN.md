@@ -11,10 +11,6 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 ### 开发流程说明
 
-```sequence
-title: Title
-```
-
 
 ## 二、环境准备
 
