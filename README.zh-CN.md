@@ -77,7 +77,7 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 ## 四、开发
 
 
-# 打开命令提示符窗口
+### PC中打开命令提示符窗口
 
   Windows 10 ----> <kbd>Win</kbd>+<kbd>R</kbd>键
 
@@ -116,7 +116,7 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 # 五、将VG710-Python-Templates项目导入VS Code
 
-&emsp;*（5.1）修改代码中的项目名称：*
+&emsp;*（5.1）修改代码中的项目名称：*<font color=#FF0000>注意：Python App名称中不能包含空格。</font>
 ```python
 
 ./Documents/HelloWorld/setup.py，代码片段：
@@ -148,7 +148,7 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 {
     "name": "Debug Server",
-    "host": "192.168.2.1",                    #车载网关以太网地址
+    "host": "192.168.2.1",                    #车载网关IP地址
     "protocol": "sftp",
     "port": 222,
     "username": "pyuser",
@@ -163,6 +163,82 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 }
 ```
 
+&emsp;*（5.2）建立Sftp连接：*
 
+点击菜单栏中的“View”，选择“command palette",在弹出框中输入：
+```
+>SFTP:Open SSH in Terminal    #启动SFTP服务
+```
+点击<kbd>enter</kbd>按钮，当提示"Select a folder..."时，输入：
+
+```
+Debug Server 192.168.2.1
+```
+点击<kbd>enter</kbd>按钮，完成VS Code与VG710的SFTP连接，用于开发者代码设计与调试。
+
+&emsp;首次连接时，“终端”会提示您是否要继续连接，此时键盘输入“yes”并点击<kbd>enter</kbd>按钮;
+
+&emsp;接着“终端”窗口会提示您输入密码，密码为VG710的15为序列号;
+
+&emsp;输入密码后，点击<kbd>enter</kbd>按钮，当“终端”提示如下信息时，说明VS Code以成功与VG710建立SFTP连接，并且VS Code已通过SFTP登入VG710系统中。
+
+```
+
+****
+```
+
+&emsp;*（5.3）将程序upload至VG710：*
+
+完成代码修改后，在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Sync Local->Remote</kbd>将代码同步到VG710中。
+在终端中输入如下信息，确保已经成功upload实例程序至VG710系统中：
+
+```
+cd /var/user/app/
+ls -l
+```
+返回如下信息，说明成功将程序实例上传至VG710
+```python
+drwxrwxrwx		4	pyuser pyuser			0 Apr 8 2020 HelloWorld
+```
+进入到“HelloWorld”项目目录中，输入如下信息，即可在VG710中运行实例
+```
+tmp/user/app #~> cd HelloWorld/src/
+tmp/user/app/HelloWorld/src #~>python main.py
+
+```
+键盘输入<kbd>ctrl</kbd>+<kbd>C</kbd>,终止调试程序
+
+实例测试无误后，即可将程序打包成二进制文件用于其他VG710使用
+
+&emsp;*（5.4）将程序构建为二进制文件：*
+
+终端退回至app目录，并输入&emsp;<kbd>build_py_app.sh HelloWorld</kbd>&emsp;如下：
+```
+tmp/user/app/HelloWorld/src #~>cd /tmp/user/app
+tmp/user/app#~>build_py_app.sh HelloWorld
+
+```
+输入<kbd>build_py_app.sh HelloWorld</kbd>，当提示如下信息时，构建完成
+```
+~ $ build_py_app.sh HelloWorld
+build APP:HelloWorld pkg!
+generate APP pkg:
+build APP:HelloWorld pkg finished
+```
+&emsp;*（5.5）将程序回传至开发者PC：*
+
+在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
+```
+  HelloWorld
+  ├── .vscode
+  │  └── sftp.json
+  ├── build
+  ├──└──*.tar.gz      #二进制文件
+  ├── src
+  │  │── main.py
+  │  └── parse_config.py
+  ├── config.yaml
+  ├── setup.py
+```
 
 Copyright (c) 2020-present Xiaopeng Gou

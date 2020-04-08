@@ -117,7 +117,7 @@ This project has generated a complete development framework for you. The followi
 
 # 5、 Import VG710 Python templates project into vs Code
 
-&emsp;*(5.1) modify the project name in the code:*
+&emsp;*(5.1) modify the project name in the code:*&emsp;<font color=#FF0000>Note: The Python App name cannot contain spaces.</font>
 ```python
 
 ./Documents/HelloWorld/setup.py，Code snippet:
