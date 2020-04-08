@@ -131,7 +131,7 @@ This project has generated a complete development framework for you. The followi
 ...
 ..
 ---------------------------------------------------------------------------
-./Documents/HelloWorld/src/main.py，代码片段：
+./Documents/HelloWorld/src/main.py，Code snippet:
 ..
 ...
     app = APPConfig(name="appname")   #Change "appName" to "HelloWorld"
