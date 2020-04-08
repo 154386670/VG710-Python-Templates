@@ -149,12 +149,12 @@ This project has generated a complete development framework for you. The followi
 
 {
     "name": "Debug Server",
-    "host": "192.168.2.1",                    #Vehicle gateway Ethernet address
+    "host": "192.168.2.1",                    "# Vehicle gateway Ethernet address"
     "protocol": "sftp",
     "port": 222,
     "username": "pyuser",
-    "password":"VF7101937000028",             #Car gateway serial number
-    "remotePath": "/var/user/app/appname",    #Modify "appname" to "HelloWorld"
+    "password":"VF7101937000028",             "# VG710 serial number"
+    "remotePath": "/var/user/app/appname",    "# Modify 'appname' to 'HelloWorld'"
     "uploadOnSave": true,
     "ignore":[
         ".vscode",
