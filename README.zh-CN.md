@@ -163,18 +163,22 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 }
 ```
 
-&emsp;*（5.2）建立Sftp连接：*
+&emsp;*（5.3）建立Sftp连接：*
 
-点击菜单栏中的“View”，选择“command palette",在弹出框中输入：
+在建立与VG710连接之前，需要确保VG710已开启“IDE调试模式”，如下。注意：为了设备安全性，该调试模式将在设备重启后自动关闭
+
+在VG710配置界面中：选择<kbd>APP</kbd>,点击<kbd>APP管理</kbd>选项卡，打开“开启IDE调试”
+
+在VS Code工具栏点击菜单栏中的“View”，选择“command palette",在弹出框中输入：
 ```
 >SFTP:Open SSH in Terminal    #启动SFTP服务
 ```
-点击<kbd>enter</kbd>按钮，当提示"Select a folder..."时，输入：
+点击键盘<kbd>enter</kbd>按钮，下拉列表会提示以下信息：
 
 ```
-Debug Server 192.168.2.1
+Debug Server 192.168.2.1              #ip地址为上一步“sftp.json”中的“host”地址，
 ```
-点击<kbd>enter</kbd>按钮，完成VS Code与VG710的SFTP连接，用于开发者代码设计与调试。
+确认无误后，点击<kbd>enter</kbd>按钮，完成VS Code与VG710的SFTP连接，用于开发者代码设计与调试。
 
 &emsp;首次连接时，“终端”会提示您是否要继续连接，此时键盘输入“yes”并点击<kbd>enter</kbd>按钮;
 
@@ -182,12 +186,24 @@ Debug Server 192.168.2.1
 
 &emsp;输入密码后，点击<kbd>enter</kbd>按钮，当“终端”提示如下信息时，说明VS Code以成功与VG710建立SFTP连接，并且VS Code已通过SFTP登入VG710系统中。
 
+```json
+BusyBox v1.26.2 (2020-03-30 13:58:08 CST) built-in shell (ash)
+
+#     #  #####  #######    #      ###
+#     # #     # #    #    ##     #   #
+#     # #           #    # #    # #   #
+#     # #  ####    #       #    #  #  #
+ #   #  #     #   #        #    #   # #
+  # #   #     #   #        #     #   #
+   #     #####    #      #####    ###
+
+---------------------------------------------------------------
+   Vehicle Gateway from InHand Networks
+---------------------------------------------------------------
+/tmp/app $ 
 ```
 
-****
-```
-
-&emsp;*（5.3）将程序upload至VG710：*
+&emsp;*（5.4）将程序upload至VG710：*
 
 完成代码修改后，在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Sync Local->Remote</kbd>将代码同步到VG710中。
 在终端中输入如下信息，确保已经成功upload实例程序至VG710系统中：
@@ -210,7 +226,7 @@ tmp/user/app/HelloWorld/src #~>python main.py
 
 实例测试无误后，即可将程序打包成二进制文件用于其他VG710使用
 
-&emsp;*（5.4）将程序构建为二进制文件：*
+&emsp;*（5.5）将程序构建为二进制文件：*
 
 终端退回至app目录，并输入&emsp;<kbd>build_py_app.sh HelloWorld</kbd>&emsp;如下：
 ```
@@ -225,7 +241,7 @@ build APP:HelloWorld pkg!
 generate APP pkg:
 build APP:HelloWorld pkg finished
 ```
-&emsp;*（5.5）将程序回传至开发者PC：*
+&emsp;*（5.6）将程序回传至开发者PC：*
 
 在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
 ```
