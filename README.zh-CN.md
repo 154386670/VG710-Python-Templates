@@ -98,7 +98,7 @@ VG710-Python-Templates         # 项目名称
 # 5、涉及的命令
 
 在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
-```java
+```python
 /tmp/app/VG710-Python-Templates $ cd ..               # 返回到上一级目录
 /tmp/app $ build_py_app.sh VG710-Python-Templates     # 执行构建编译
 build APP:VG710-Python-Templates pkg!                 # 构建开始
