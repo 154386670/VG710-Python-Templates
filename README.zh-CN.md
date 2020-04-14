@@ -110,7 +110,7 @@ git clone https://github.com/154386670/VG710-Python-Templates.git
 &emsp;*建立Sftp连接：*
 
 
-在VS Code工具栏点击菜单栏中的“View”，选择“command palette",在弹出框中输入：
+在VS Code工具栏点击菜单栏中的<kbd>View</kbd>，选择<kbd>command palette</kbd>,在弹出框中输入：
 ```
 >SFTP:Open SSH in Terminal    #启动SFTP服务
 ```
