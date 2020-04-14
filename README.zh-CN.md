@@ -157,7 +157,7 @@ ls -l
 ```python
 drwxrwxrwx		4	pyuser pyuser			0 Apr 8 2020 VG710-Python-Templates
 ```
-进入到“HelloWorld”项目目录中，输入如下信息，即可在VG710中运行实例
+进入到“VG710-Python-Templates”项目目录中，输入如下信息，即可在VG710中运行实例
 ```
 tmp/app #~> cd VG710-Python-Templates/src/
 tmp/app/VG710-Python-Templates/src #~>python main.py
