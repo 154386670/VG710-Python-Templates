@@ -37,7 +37,20 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 &emsp;&emsp;&emsp;*<2>.SFTP*
 
-# 3、VG710-Python-Templates文件说明
+&emsp;&emsp;&emsp;[*VS Code插件安装方法*](https://code.visualstudio.com/docs/editor/extension-gallery)
+
+# 3、获取VG710-Python-Templates实例项目
+
+&emsp;&emsp;以MacOS为例，将文件存储在“Documents/”目录中
+```
+cd Documents/
+```
+&emsp;&emsp;克隆项目
+```
+git clone https://github.com/154386670/VG710-Python-Templates.git
+```
+
+## VG710-Python-Templates文件说明
 
 本项目已经为你生成了一个完整的开发框架，下面是整个项目的目录结构。
 ```
@@ -49,17 +62,14 @@ VG710-Python-Templates         # 项目名称
 │  │── main.py                 # App程序入口
 │  └── parse_config.py         # 解析App配置文件
 ├── config.yaml                # App配置文件
-├── setup.py                   # App版本、SDK版本等信息说明
+└── setup.py                   # App版本、SDK版本等信息说明
 ```
-
 
 # 4、修改文件内容
 
 ## 首次开发需要修改以下3个文件为实际项目内容
 
 &emsp;<font color=#ffff4>注意：引号中的内容不能有空格。</font>
-
-以VG710-Python-Templates项目为例
 
 ```python
 1.VG710-Python-Templates/setup.py，#代码片段：
@@ -99,20 +109,7 @@ VG710-Python-Templates         # 项目名称
 ```
 *<font color=#ffff4>注意：SFTP密码为VG710网关15位序列号”</font>*
 
-# 5、程序开发
-
-&emsp;&emsp;以MacOS为例，将文件存储在“Documents/”目录中
-```
-cd Documents/
-```
-&emsp;&emsp;克隆项目
-```
-git clone https://github.com/154386670/VG710-Python-Templates.git
-```
-
-
-&emsp;*建立Sftp连接：*
-
+# 5.建立Sftp连接：
 
 在VS Code工具栏点击菜单栏中的<kbd>View</kbd>，选择<kbd>command palette</kbd>,在弹出框中输入：
 ```

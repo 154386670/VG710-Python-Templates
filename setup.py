@@ -8,7 +8,7 @@ install_requires： 安装依赖
 entry_points： 程序执行的入口
 '''
 from setuptools import setup, find_packages
-setup(name='helloworld',
+setup(name='VG710-Python-Templates',
       sdk_version='0.2.0',
       version='0.0.0',
       author='Inhand',

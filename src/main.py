@@ -17,7 +17,7 @@ def main(argv=sys.argv):
          app_config.get_app_cfg_file()
             get user app configuration file
     """
-    app = APPConfig(name="appname") 
+    app = APPConfig(name="VG710-Python-Templates") 
     app_config_file = app.get_app_cfg_file()
     if not app_config_file:
         return
