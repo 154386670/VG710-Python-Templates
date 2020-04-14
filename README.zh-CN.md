@@ -55,7 +55,7 @@ VG710-Python-Templates         # 项目名称
 
 &emsp;<font color=#ffff4>注意：引号中的内容不能有空格。</font>
 
-以HelloWorld项目为例
+以VG710-Python-Templates项目为例
 
 ```python
 1.VG710-Python-Templates/setup.py，#代码片段：
@@ -168,7 +168,7 @@ tmp/app/VG710-Python-Templates/src #~>python main.py
 实例测试无误后，即可将程序打包成二进制文件用于其他VG710使用
 
 
-# 6、编译构建
+# 7、编译构建
 
 在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
 
@@ -185,7 +185,7 @@ build APP:VG710-Python-Templates pkg finished!        # 完成构建
 VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制包
 /tmp/app/appname/build $ 
 ```
-# 6、获取二进制包并在另一台VG710中安装应用程序
+# 8、获取二进制包并在另一台VG710中安装应用程序
 
 在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
 
