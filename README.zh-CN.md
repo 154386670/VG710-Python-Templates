@@ -156,11 +156,11 @@ BusyBox v1.26.2 (2020-03-30 13:58:08 CST) built-in shell (ash)
 
 ```
 cd /var/app/
-ls -l
+/tmp/app $ ls
 ```
-返回如下信息，说明成功将程序实例上传至VG710
+返回信息中包含项目目录，如下：
 ```python
-drwxrwxrwx		4	pyuser pyuser			0 Apr 8 2020 VG710-Python-Templates
+VG710-Python-Templates
 ```
 进入到“VG710-Python-Templates”项目目录中，输入如下信息，即可在VG710中运行实例
 ```
