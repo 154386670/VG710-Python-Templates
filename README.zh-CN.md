@@ -15,7 +15,7 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 &emsp;&emsp;*--> 映翰通的车载网关InVehicle Gateway710，简称VG710*
 
-&emsp;&emsp;&emsp;&emsp; <font color=#ff000>★★★</font>确保VG710配置界面中<kbd>APP管理已勾选</kbd>“开启IDE调试”模式
+&emsp;&emsp;&emsp;&emsp; <font color=#ff000>★★★</font>确保VG710配置界面中<kbd>APP管理</kbd>已勾选“开启IDE调试”模式，注意：为了设备安全性，调试模式将在设备重启后自动关闭，若需重新连接，请再次勾选“开启IDE调试”
 
 &emsp;&emsp;*--> PC电脑，Windows/MacOS/Linux三选一,已通过RJ45或者WiFi连接到VG710*
 
@@ -95,9 +95,85 @@ VG710-Python-Templates         # 项目名称
 ```
 *<font color=#ffff4>注意：SFTP密码为VG710网关15位序列号”</font>*
 
-# 5、涉及的命令
+# 5、程序开发
+
+&emsp;&emsp;以MacOS为例，将文件存储在“Documents/”目录中
+```
+cd Documents/
+```
+&emsp;&emsp;克隆项目
+```
+git clone https://github.com/154386670/VG710-Python-Templates.git
+```
+
+
+&emsp;*建立Sftp连接：*
+
+
+在VS Code工具栏点击菜单栏中的“View”，选择“command palette",在弹出框中输入：
+```
+>SFTP:Open SSH in Terminal    #启动SFTP服务
+```
+按下键盘<kbd>enter</kbd>按钮，下拉列表会提示以下信息：
+
+```
+Debug Server 192.168.2.1              #ip地址为上一步“sftp.json”文件中的“host”地址，
+```
+确认无误后，按下<kbd>enter</kbd>按钮,之后再VS Code ”终端"界面按照如下步骤操作：
+
+&emsp;1、首次连接时，“终端”会提示您是否要继续连接，此时键盘输入“yes”并按下<kbd>enter</kbd>按钮;
+
+&emsp;2、接着“终端”窗口会提示您输入密码，密码为VG710的15位序列号;
+
+&emsp;3、输入密码后，点击<kbd>enter</kbd>按钮，当“终端”提示如下信息时，说明VS Code以成功与VG710建立SFTP连接.
+
+
+```json
+BusyBox v1.26.2 (2020-03-30 13:58:08 CST) built-in shell (ash)
+
+#     #  #####  #######    #      ###
+#     # #     # #    #    ##     #   #
+#     # #           #    # #    # #   #
+#     # #  ####    #       #    #  #  #
+ #   #  #     #   #        #    #   # #
+  # #   #     #   #        #     #   #
+   #     #####    #      #####    ###
+
+---------------------------------------------------------------
+   Vehicle Gateway from InHand Networks
+---------------------------------------------------------------
+/tmp/app $                  #该目录问VG710文件目录
+
+```
+# 6、将调试程序upload至VG710：
+
+完成代码修改后，在VS Code左侧“EXPLORER”空白区域点击鼠标右键，选择<kbd>Sync Local->Remote</kbd>将代码同步到VG710中。
+
+```
+cd /var/app/
+ls -l
+```
+返回如下信息，说明成功将程序实例上传至VG710
+```python
+drwxrwxrwx		4	pyuser pyuser			0 Apr 8 2020 VG710-Python-Templates
+```
+进入到“HelloWorld”项目目录中，输入如下信息，即可在VG710中运行实例
+```
+tmp/app #~> cd VG710-Python-Templates/src/
+tmp/app/VG710-Python-Templates/src #~>python main.py
+
+```
+键盘输入<kbd>ctrl</kbd>+<kbd>C</kbd>,终止调试程序
+
+实例测试无误后，即可将程序打包成二进制文件用于其他VG710使用
+
+
+# 6、编译构建
 
 在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
+
+terminal show：
+
 ```python
 /tmp/app/VG710-Python-Templates $ cd ..               # 返回到上一级目录
 /tmp/app $ build_py_app.sh VG710-Python-Templates     # 执行构建编译
@@ -109,3 +185,4 @@ build APP:VG710-Python-Templates pkg finished!        # 完成构建
 VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制包
 /tmp/app/appname/build $ 
 ```
+# 6、获取而今之宝并在VG710中安装
