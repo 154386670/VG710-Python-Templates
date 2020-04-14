@@ -111,7 +111,7 @@ VG710-Python-Templates         # 项目名称
 
 # 5.建立Sftp连接：
 
-在VS Code工具栏点击菜单栏中的<kbd>View</kbd>，选择<kbd>command palette</kbd>,在弹出框中输入：
+在VS Code工具栏点击菜单栏中的<kbd>View</kbd>，选择<kbd>Command Palette</kbd>,在弹出框中输入：
 ```
 >SFTP:Open SSH in Terminal    #启动SFTP服务
 ```
@@ -175,12 +175,9 @@ tmp/app/VG710-Python-Templates/src #~>python main.py
 
 # 7、编译构建
 
-在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
+## 7.1在VG710中打包VG710-Python-Templates项目
 
-如下图所示：
-<p align="center">
-  <img width="800" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Download_file.png">
-</p>
+在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
 
 terminal show：
 
@@ -195,9 +192,15 @@ build APP:VG710-Python-Templates pkg finished!        # 完成构建
 VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制包
 /tmp/app/appname/build $ 
 ```
-# 8、获取二进制包并在另一台VG710中安装应用程序
 
-在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
+如下图所示：
+<p align="center">
+  <img width="800" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Download_file.png">
+</p>
+
+## 7.2获取二进制包并在另一台VG710中安装应用程序
+
+在左侧“EXPLORER”空白处点击鼠标右键（如上图所示），选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
 
 ```json
   VG710-Python-Templates
@@ -213,3 +216,5 @@ VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制
 ```
 
 以上完成了对VG710通过python进行二次开发的连接，开发，调试，打包；可将*.tar.gz应用程序二进制包安装在其他VG710网关中，详细步骤请参考“VG710用户手册”.
+
+Copyright (c) 2020-present XiaoPengGOU
