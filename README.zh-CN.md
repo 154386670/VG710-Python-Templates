@@ -185,4 +185,4 @@ build APP:VG710-Python-Templates pkg finished!        # 完成构建
 VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制包
 /tmp/app/appname/build $ 
 ```
-# 6、获取而今之宝并在VG710中安装
+# 6、获取二进制包并在另一台VG710中安装应用程序
