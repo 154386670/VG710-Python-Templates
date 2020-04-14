@@ -148,7 +148,11 @@ BusyBox v1.26.2 (2020-03-30 13:58:08 CST) built-in shell (ash)
 ```
 # 6、将调试程序upload至VG710：
 
-完成代码修改后，在VS Code左侧“EXPLORER”空白区域点击鼠标右键，选择<kbd>Sync Local->Remote</kbd>将代码同步到VG710中。
+完成代码修改后，在VS Code左侧“EXPLORER”空白区域点击鼠标右键，选择<kbd>Sync Local->Remote</kbd>将代码同步到VG710中。如下图所示：
+
+<p align="center">
+  <img width="600" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Remote_file.png">
+</p>
 
 ```
 cd /var/app/
