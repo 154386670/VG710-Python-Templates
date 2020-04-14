@@ -177,6 +177,11 @@ tmp/app/VG710-Python-Templates/src #~>python main.py
 
 在完成项目开发后，需要将源代码编译成二进制用于安装在工程项目中其他VG710网关中，编译打包过程在VG710中完成，打包路径及命令如下：
 
+如下图所示：
+<p align="center">
+  <img width="800" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Download_file.png">
+</p>
+
 terminal show：
 
 ```python
