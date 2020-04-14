@@ -186,3 +186,20 @@ VG710-Python-Templates-V0.2.0.tar.gz                  # 构建成功的二进制
 /tmp/app/appname/build $ 
 ```
 # 6、获取二进制包并在另一台VG710中安装应用程序
+
+在左侧“EXPLORER”空白处点击鼠标右键，选择<kbd>Download Folder</kbd>将二进制文件回传到本地PC中。成功回传后项目目录会新增*.tar.gz文件，如下：
+
+```json
+  VG710-Python-Templates
+  ├── .vscode
+  │  └── sftp.json
+  ├── build
+  ├──└──VG710-Python-Templates-V0.2.0.tar.gz      #二进制文件
+  ├── src
+  │  │── main.py
+  │  └── parse_config.py
+  ├── config.yaml
+  ├── setup.py
+```
+
+完成了对VG710通过python进行二次开发的连接，开发，调试，打包；可将*.tar.gz应用程序二进制包安装在其他VG710网关中，详细步骤请参考“VG710用户手册”
