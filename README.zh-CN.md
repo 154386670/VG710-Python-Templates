@@ -93,12 +93,12 @@ VG710-Python-Templates         # 项目名称
 3.VG710-Python-Templates/.vscode/sftp.json. #代码片段：
 {
     "name": "Debug Server",
-    "host": "192.168.2.1",                            #VG710 IP地址
+    "host": "192.168.2.1",                            # VG710 IP地址
     "protocol": "sftp",
     "port": 222,
-    "username": "pyuser",                             # SFTP用户名
+    "username": "pyuser",                             # SFTP用户名，默认为pyuser，请勿更改
     "password":"VF7101937000028",                     # SFTP密码
-    "remotePath": "/var/app/VG710-Python-Templates",  #项目名称
+    "remotePath": "/var/app/VG710-Python-Templates",  # 项目名称
     "uploadOnSave": true,
     "ignore":[
         ".vscode",
