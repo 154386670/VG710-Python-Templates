@@ -15,9 +15,9 @@ VG710-Python-Templates是一个车载边缘计算解决方案，它基于python3
 
 &emsp;&emsp;*--> 映翰通的车载网关InVehicle Gateway710，简称VG710*
 
-&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710固件:[VG7-V1.0.0.rxxxx.bin](https://github.com/154386670/VG710-Python-Templates/releases/tag/V1.0.0)
+&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710固件:[VG7-V1.0.0.rxxxx.bin](https://github.com/154386670/VG710-Python-Templates/releases)
 
-&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710 PythonSDK:[py3sdk-V1.x.x_Edge-VG9.zip](https://github.com/154386670/VG710-Python-Templates/releases/tag/V1.0.0)
+&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710 PythonSDK:[py3sdk-V1.x.x_Edge-VG9.zip](https://github.com/154386670/VG710-Python-Templates/releases)
 
 &emsp;&emsp;&emsp;<font color=#ff000>★</font>确保VG710配置界面中<kbd>APP管理</kbd>已勾选“开启IDE调试”模式，注意：为了设备安全性，调试模式将在设备重启后自动关闭，若需重新连接，请再次勾选“开启IDE调试”
 
