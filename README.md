@@ -3,158 +3,104 @@
 </p>
 
 
-English | [简体中文](./README.zh-CN.md)
+简体中文 | [English](./README.md)
 
-## I. Introduction
+# 1、Introduction
 
-VG710-Python-Templates is an in-vehicle edge computing solution. It is based on python3 and IoT. It uses the latest IoT architecture technology, has built-in rich API interfaces, refined rich business modules, and provided rich component functions. , It can help you quickly build customized business functions, I believe that no matter what your Internet of Things needs, this project can help the master to you
+The VG710-Python-Templates is an in-vehicle edge computing solution. It is based on Python3 and the latest IoT architecture technologies. It has rich built-in APIs, a wealth of business modules and functional components to help you quickly build customized business functions. No matter what you IoT needs are, this solution can provide help.
 
-&emsp; Development process description
+# 2、System Requirements
 
-<kbd>VS Code IDE</kbd>---(sftp connect)---><kbd>VG710</kbd>---><kbd>Import Templates</kbd>
+## 2.1 Hardware Requirements
 
-<kbd>Python Program design</kbd>---><kbd>Online debugging</kbd>
+&emsp;&emsp;*--> InVehicle Gateway710, or VG710 in short
 
-<kbd>Package binaries in VG710</kbd>---><kbd>Download and install binaries on other VG710</kbd>
+&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710 firmware: [VG7-V1.0.0.rxxxx.bin](https://github.com/154386670/VG710-Python-Templates/releases)
 
-## 2、 Environmental preparation
+&emsp;&emsp;&emsp;<font color=#ff000>★</font>VG710 Python SDK:[py3sdk-V1.x.x_Edge-VG9.zip](https://github.com/154386670/VG710-Python-Templates/releases)
 
-To use this template to quickly develop your connected car application, you must have the following conditions
+&emsp;&emsp;&emsp;<font color=#ff000>★</font>Ensure that “Enable IDE debugging” is checked in <kbd>APP Management</kbd> in the VG710 configuration interface. 
 
-### `1. InVehicle Gateway710, the vehicle gateway of Yinghantong, referred to as VG710 for short`
+&emsp;&emsp;&emsp;Note: For the purpose of device security, debugging mode will be automatically disabled after the device restarts. If you need to reconnect, please check “Enable IDE debugging” again.
 
-### `2. Internet of things sim card capable of accessing the internet`
+&emsp;&emsp;*--> A computer, with Windows, MacOS or Linux, that is connected to VG710 via RJ45 or Wi-Fi.*
 
-### `3. A PC computer, Windows / MacOS / Linux, and has access to the Internet`
+*<font color=#ffff4>&emsp;&emsp;&emsp;For better programming experience, it is recommended to insert an IoT SIM card in the VG710 and connect it to the Internet.</font>*
 
-### `4. Make sure the following software is installed on your PC:`
+## 2.2 Software Requirements of PC
 
-&emsp;&emsp;*(4.1).[MicroSoft VS code IDE](https://code.visualstudio.com/Download/)*
+&emsp;&emsp;*--> [Python3.7.X](https://www.python.org/downloads/)*
 
-&emsp;&emsp;*(4.2).[Python3.7.X](https://www.python.org/downloads/)*
+&emsp;&emsp;*--> [MicroSoft VS code IDE development tool](https://code.visualstudio.com/Download/)*
 
-### `5. Verify that the PC environment meets the requirements:`
+&emsp;&emsp;VS Code must-have plugins:：
 
-&emsp;&emsp;*(5.1).Press <kbd>Win</kbd>+<kbd>R</kbd> ，Bring up the command prompt, enter python, and press Enter. The following message pops up, indicating that the Python operating environment is ready*
+&emsp;&emsp;&emsp;*<1>.Python*
 
-```cmd
-    Python 3.7.4 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53)
-    [Clang 6.0 (clang-600.0.57)] on win64
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
+&emsp;&emsp;&emsp;*<2>.SFTP*
+
+&emsp;&emsp;&emsp;[*VS Code plugin installation method *](https://code.visualstudio.com/docs/editor/extension-gallery)
+
+# 3、Get the VG710-Python-Templates Example Project
+
+&emsp;&emsp;Take MacOS for example, the file is stored in the "Documents/" directory.
+```
+cd Documents/
+```
+&emsp;&emsp;Clone the project.
+```
+git clone https://github.com/154386670/VG710-Python-Templates.git
 ```
 
-&emsp;&emsp;*(5.2). Confirm the vs Code environment, and install the plug-in in the "extensions" of the vs Code ide to continue using*
-
-&emsp;&emsp;&emsp;*(5.2.1).Python*
-
-&emsp;&emsp;&emsp;*(5.2.1).Project Templates*
-
-&emsp;&emsp;&emsp;*(5.2.1).SFTP*
-
-&emsp;&emsp;*(5.3). VS Code environment confirmation, to complete the installation of VS code, you need to install the plug-in in "Extensions" of VS Code IDE to continue using*
-
-&emsp;&emsp;&emsp;*(5.3.1)make sure “Python: select Interpreter” is Python 3.7.x*
-
-
-
-## 三、VG710-Python-Templates Directory
+## VG710-Python-Templates File Description
 
 This project has generated a complete development framework for you. The following is the directory structure of the entire project.
-
 ```
+VG710-Python-Templates         # Project name
 ├── .vscode                    # VS Code configuration folder
-│  └── sftp.json               # Configuration file of SFTP plug-in, used to establish SFTP connection with InVehicleG710
-├── build                      # Build folder
-├── src                        # AppSource folder
-│  │── main.py                 # AppProgram entry
-│  └── parse_config.py         # Parsing configuration files
-├── config.yaml                # configuration files
-├── setup.py                   # Version, SDK version and other information description
+│  └── sftp.json               # SFTP plugin configuration file
+├── build                      # App release package folder
+├── src                        # App source code folder
+│  │── main.py                 # App program entrance
+│  └── parse_config.py         # Parse App configuration file
+├── config.yaml                # App configuration file
+└── setup.py                   # App version, SDK version and other information
 ```
 
+# 4、Modify the File
 
+## You need to modify the following three files with the actual project content.
 
-## 4. Development
+&emsp;<font color=#ffff4>Note: There must be no space in contents in the quotation marks.</font>
 
-
-# Open a command prompt window
-
-  Windows 10 ----> <kbd>Win</kbd>+<kbd>R</kbd>
-
-  MacOS10.14 ----> <kbd>command</kbd>+<kbd>Space</kbd>，Inputterminal.app
-
-  Linux      ----> <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>，Open new terminal
-
-
-```
-# Take MacOS as an example, store files in the "Documents /" directory
-
-  cd Documents/
-
-# Clone project
-
-  git clone https://github.com/154386670/VG710-Python-Templates.git
-
-```
-
-# 5. Modify the project name
-
-&emsp;Modify the cloned template project to the name of the self-built project，Take "HelloWorld" as an example，Change the name of the "VG710-Python-Templates" project folder to "HelloWorld"
-
-&emsp;The file directory is as follows：
-```
-  HelloWorld
-  ├── .vscode
-  │  └── sftp.json
-  ├── build
-  ├── src
-  │  │── main.py
-  │  └── parse_config.py
-  ├── config.yaml
-  ├── setup.py
-```
-
-# 5、 Import VG710 Python templates project into vs Code
-
-&emsp;*(5.1) modify the project name in the code:*&emsp;<font color=#FF0000>Note: The Python App name cannot contain spaces.</font>
 ```python
-
-./Documents/HelloWorld/setup.py，Code snippet:
+1.VG710-Python-Templates/setup.py，# Code snippet：
 ..
 ...
     rom setuptools import setup, find_packages
-    setup(name='appName',          #Change "appName" to "HelloWorld"
+    setup(name='VG710-Python-Templates',          #Project name
         sdk_version='0.2.0',
         version='0.0.0',
         author='Inhand',
 ...
 ..
----------------------------------------------------------------------------
-./Documents/HelloWorld/src/main.py，Code snippet:
+2.VG710-Python-Templates/src/main.py，# Code snippet：
 ..
 ...
-    app = APPConfig(name="appname")   #Change "appName" to "HelloWorld"
+    app = APPConfig(name="VG710-Python-Templates")   #Project name
     app_config_file = app.get_app_cfg_file()
 ...
 ..
----------------------------------------------------------------------------
 
-```
-&emsp;*(5.2) Configure Sftp connection information:*
-
-
-```json
-./Documents/HelloWorld/.vscode/sftp.json
-
+3.VG710-Python-Templates/.vscode/sftp.json. # Code snippet：
 {
     "name": "Debug Server",
-    "host": "192.168.2.1",                    "# Vehicle gateway Ethernet address"
+    "host": "192.168.2.1",                            # VG710 IP address
     "protocol": "sftp",
     "port": 222,
-    "username": "pyuser",
-    "password":"VF7101937000028",             "# VG710 serial number"
-    "remotePath": "/var/user/app/appname",    "# Modify 'appname' to 'HelloWorld'"
+    "username": "pyuser",                             # SFTP username, the default is pyuser, please do not change
+    "password":"VF7101937000028",                     # SFTP password
+    "remotePath": "/var/app/VG710-Python-Templates",  # Project name
     "uploadOnSave": true,
     "ignore":[
         ".vscode",
@@ -163,7 +109,117 @@ This project has generated a complete development framework for you. The followi
     ]
 }
 ```
+*<font color=#ffff4>Note: SFTP password is the 15-digit serial number of the VG710.</font>*
+
+# 5.Establish SFTP Connection：
+
+In the VS Code toolbar, click <kbd>View</kbd> in the menu bar, select <kbd>Command Palette</kbd>, and enter the following in the pop-up box:
+
+```
+>SFTP:Open SSH in Terminal    # Start SFTP service
+```
+
+Press <kbd>enter</kbd> on the keyboard, then the drop-down list will prompt the following information:
+
+```json
+Debug Server 192.168.2.1              # IP address is the "host" address in file "sftp.json" in the previous step.
+```
+After confirming that it is correct, press <kbd>enter</kbd>, and then follow the steps below on the VS Code "Terminal" interface:
+
+&emsp;1. When connecting for the first time, the "Terminal" will prompt you whether you want to continue to connect, enter "yes" and press <kbd>enter</kbd> on the keyboard;
+
+&emsp;2.Then the “Terminal” window will prompt you to enter the password, the password is the 15-digit serial number of the VG710;
+
+&emsp;3. After entering the password, click <kbd>enter</kbd>. When the "Terminal" prompts the following information, it means that VS Code has successfully established an SFTP connection with the VG710.
+
+```json
+BusyBox v1.26.2 (2020-03-30 13:58:08 CST) built-in shell (ash)
+
+#     #  #####  #######    #      ###
+#     # #     # #    #    ##     #   #
+#     # #           #    # #    # #   #
+#     # #  ####    #       #    #  #  #
+ #   #  #     #   #        #    #   # #
+  # #   #     #   #        #     #   #
+   #     #####    #      #####    ###
+
+---------------------------------------------------------------
+   Vehicle Gateway from InHand Networks
+---------------------------------------------------------------
+/tmp/app $                  # This directory is the VG710 file directory.
+
+```
+# 6、Upload the Debugger to VG710
+
+After completing code modification, right click the mouse in the blank area of "EXPLORER" on the left side of VS Code, select <kbd>Sync Local->Remote</kbd> to synchronize the code to VG710. As shown below:
+
+<p align="center">
+  <img width="800" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Remote_file.png">
+</p>
+
+```
+cd /var/app/
+/tmp/app $ ls
+```
+The returned information contains the project directory, as follows:
+```python
+VG710-Python-Templates
+```
+Go to "VG710-Python-Templates" project directory, enter the following information to run the program in VG710
+```
+tmp/app #~> cd VG710-Python-Templates/src/
+tmp/app/VG710-Python-Templates/src #~>python main.py
+
+```
+
+Enter <kbd>ctrl</kbd>+<kbd>C</kbd> on the keyboard to terminate the debugger.
+
+After the program passes the test, it can be packaged into a binary file for use on the other VG710.
 
 
+# 7、Compile and Build
 
-Copyright (c) 2020-present Xiaopeng Gou
+## 7.1 Package the VG710-Python-Templates Project in VG710
+
+After the development is completed, the source code needs to be compiled into a binary file for installation in other VG710 gateways in the project. The compilation and packaging process are to be completed in VG710. The packaging path and commands are as follows:
+
+terminal show：
+
+```python
+/tmp/app/VG710-Python-Templates $ cd ..               # Return to previous directory
+/tmp/app $ build_py_app.sh VG710-Python-Templates     # Perform build compilation
+build APP:VG710-Python-Templates pkg!                 # Start building
+generate APP pkg:
+build APP:VG710-Python-Templates pkg finished!        # Finish building
+/tmp/app $ cd VG710-Python-Templates/build/           # Go to the build folder in VG710-Python-Templates
+/tmp/app/VG710-Python-Templates/build $ ls            # Check whether the binary package is generated
+VG710-Python-Templates-V0.2.0.tar.gz                  # Binary package successfully built
+/tmp/app/appname/build $ 
+```
+
+As show below: 
+<p align="center">
+  <img width="800" src="https://github.com/154386670/VG710-Python-Templates/blob/master/picture/Download_file.png">
+</p>
+
+## 7.2 Get the Binary Package and Install the Application in Another VG710
+
+Right click the mouse in the blank area of "EXPLORER" on the left side (as shown in the figure above) and select <kbd>Download Folder</kbd> to transfer the binary file back to the local computer. After transferring successfully, a * .tar.gz file will be added to the project directory, as show below:
+
+
+```json
+  VG710-Python-Templates
+  ├── .vscode
+  │  └── sftp.json
+  ├── build
+  ├──└──VG710-Python-Templates-V0.2.0.tar.gz      # Binary file
+  ├── src
+  │  │── main.py
+  │  └── parse_config.py
+  ├── config.yaml
+  ├── setup.py
+```
+
+The above completes the connection, development, debugging, and packaging of VG710 secondary development through Python. The VG710-Python-Templates-V0.2.0.tar.gz application binary package can be installed in other VG710 gateways, please refer to the "VG710 User Manual" for detailed steps.
+
+Copyright (c) 2020-present XiaoPengGOU
